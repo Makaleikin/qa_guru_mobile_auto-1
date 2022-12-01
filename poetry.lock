@@ -408,7 +408,7 @@ h11 = ">=0.9.0,<1"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "349d3108765d5f68c8fb7a8b855f395e09e546505fabc4b09b4d8d7f225aea59"
+content-hash = "e3c76d25ec95d38fa5c6f77d099795293f55e41cfc5b1b4381d10283fe8a9a09"
 
 [metadata.files]
 allure-pytest = [

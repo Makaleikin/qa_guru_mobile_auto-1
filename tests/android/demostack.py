@@ -1,14 +1,16 @@
-import allure
-from allure import step
+from appium.webdriver.common.appiumby import AppiumBy
 from selene import have
 from selene.support.shared import browser
+import allure
 
 
-def test_add_to_cart():
-    with allure.step('Open page and found item'):
-        browser.open('https://bstackdemo.com/')
-        browser.element('//*[@id="1"]/p').should(have.text('iPhone 12'))
-    with allure.step('Add item to cart'):
-        browser.element('//*[@id="1"]/div[4]').click()
-    with allure.step('Item be in cart'):
-        browser.element('//*[@id="__next"]/div/div/div[2]/div[2]/div[2]/div/div[3]/p[1]').should(have.exact_text('iPhone 12'))
+def test_search():
+    with allure.step('Type search'):
+        browser.element((AppiumBy.ACCESSIBILITY_ID, 'Search Wikipedia')).click()
+        browser.element((AppiumBy.ID, 'org.wikipedia.alpha:id/search_src_text')).type(
+            'BrowserStack'
+        )
+    with allure.step('Verify content found'):
+        browser.all(
+            (AppiumBy.ID, 'org.wikipedia.alpha:id/page_list_item_title')
+        ).should(have.size_greater_than(0))
