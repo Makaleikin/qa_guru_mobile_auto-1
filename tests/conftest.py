@@ -5,7 +5,7 @@ from mobile_test_demo.assist import attach
 from tests.running_session import get_browser_option, run_session, cap
 
 
-@pytest.fixture(scope="function", autouse=True)
+@pytest.fixture(scope="session", autouse=True)
 def run_build():
     get_browser_option(browser)
     run_session(cap)
