@@ -237,6 +237,7 @@ dmypy.json
 cython_debug/
 
 browserstack_sample.py
+.env
 
 # PyCharm
 #  JetBrains specific template is maintained in a separate JetBrains.gitignore that can
