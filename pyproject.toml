@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "mobile-test-demo"
+version = "0.1.0"
+description = ""
+authors = ["Artem <armlynskii@gmail.com>"]
+packages = [{include = "mobile_test_demo"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+Appium-Python-Client = "^2.6.1"
+selene = {version = "^2.0.0-beta.8", allow-prereleases = true}
+pytest = "^7.1.3"
+allure-pytest = "^2.10.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
