@@ -14,3 +14,15 @@ def test_search_wikipedia():
         browser.all(
             (AppiumBy.ID, 'org.wikipedia.alpha:id/page_list_item_title')
         ).should(have.size_greater_than(0))
+
+
+def test_search_google():
+    with allure.step('Type search'):
+        browser.element((AppiumBy.ACCESSIBILITY_ID, 'Search Wikipedia')).click()
+        browser.element((AppiumBy.ID, 'org.wikipedia.alpha:id/search_src_text')).type(
+            'Google'
+        )
+    with allure.step('Verify content found'):
+        browser.all(
+            (AppiumBy.ID, 'org.wikipedia.alpha:id/page_list_item_title')
+        ).should(have.size_greater_than(0))
